@@ -9,6 +9,7 @@ public class meshrenderer : MonoBehaviour
     public float speed;
     public Transform pointA, pointB;
     public float radius;
+    public float dist;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,17 +23,12 @@ public class meshrenderer : MonoBehaviour
         //transform.Translate(Vector3.back * speed * Time.deltaTime); // game object movement  
         //transform.position = Vector3.Lerp(pointA.position,pointB.position, speed * Time.time); // makes the game object moves from point a to b
         //transform.position = Vector3.MoveTowards(transform.position, pointA.position, speed * Time.deltaTime); // makes the game object moves towards a specific position
-        if (true)
-        {
-            float dist = Vector3.Distance(transform.position, pointA.position);// distance between player and point a
-            Gizmos.DrawWireSphere(transform.position, radius);
-        }
-        else 
-        {
+        
+           float dist = Vector3.Distance(transform.position, pointA.position); // distance between player and point 
             Debug.Log(dist + "enemy has entered");
-        }
-       
-    
+        
+
+
     }
 
     private void OnEnable()

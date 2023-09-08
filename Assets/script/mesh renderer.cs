@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Burst.Intrinsics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class meshrenderer : MonoBehaviour
@@ -24,8 +22,16 @@ public class meshrenderer : MonoBehaviour
         //transform.Translate(Vector3.back * speed * Time.deltaTime); // game object movement  
         //transform.position = Vector3.Lerp(pointA.position,pointB.position, speed * Time.time); // makes the game object moves from point a to b
         //transform.position = Vector3.MoveTowards(transform.position, pointA.position, speed * Time.deltaTime); // makes the game object moves towards a specific position
-        float dist = Vector3.Distance(transform.position,pointA.position); // distance between player and point a
-        Debug.Log(dist + "enemy has entered");
+        if (true)
+        {
+            float dist = Vector3.Distance(transform.position, pointA.position);// distance between player and point a
+            Gizmos.DrawWireSphere(transform.position, radius);
+        }
+        else 
+        {
+            Debug.Log(dist + "enemy has entered");
+        }
+       
     
     }
 
